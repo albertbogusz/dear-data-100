@@ -1,0 +1,7 @@
+[
+  {
+    "label": "Run Sketch",
+    "command": "processing",
+    "args": ["cli", "--sketch=sketch", "--run"],
+  },
+]
