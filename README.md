@@ -4,7 +4,7 @@ An assignment for `#CreativeCoding`, part of the [IN1007 Programming in Java](ht
 
 My topic is observations from various walks that I do, each one logged with the following data points:
 - Date (YYYY.MM.DD)
-- Time Started (HH:MM)
+- Time Started (HH:MM:SS)
 - Duration (HH:MM:SS)
 - With Dog (True/False)
 - Distance (km)
