@@ -1,26 +1,24 @@
 class Walk {
-  String date, timeStarted, timeEnded;
+  String date;
   boolean withDog;
+  int timeStarted, timeEnded, avgBpm, activeKcal, effort, duration;
   double distance;
-  int avgBpm, activeKcal, effort, duration;
 
   Walk(String date, String timeStarted, String timeEnded, boolean withDog, double distance, int avgBpm, int activeKcal, int effort) {
     this.date = date;
-    this.timeStarted = timeStarted;
-    this.timeEnded = timeEnded;
+    this.timeStarted = parseHrMinSecTime(timeStarted);
+    this.timeEnded = parseHrMinSecTime(timeEnded);
     this.withDog = withDog;
     this.distance = distance;
     this.avgBpm = avgBpm;
     this.activeKcal = activeKcal;
     this.effort = effort;
 
-    var startSeconds = parseHrMinSecTime(timeStarted);
-    var endSeconds = parseHrMinSecTime(timeEnded);
     // roll over to next day
-    if (endSeconds < startSeconds) {
-      endSeconds += 24 * 3600; // add 24 hours in seconds
+    if (this.timeEnded < this.timeStarted) {
+      this.timeEnded += 24 * 3600; // add 24 hours in seconds
     }
-    this.duration = endSeconds - startSeconds;
+    this.duration = this.timeEnded - this.timeStarted;
   }
 
   int parseHrMinSecTime(String time) {
