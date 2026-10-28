@@ -9,8 +9,8 @@ void setup() {
   for (var row : loadTable("walks.csv", "header").rows()) {
     walks.add(new Walk (
       row.getString("Date (YYYY.MM.DD)"),
-      row.getString("Time Started (HH:MM:SS)"),
-      row.getString("Time Ended (HH:MM:SS)"),
+      parseHrMinSecTime(row.getString("Time Started (HH:MM:SS)")),
+      parseHrMinSecTime(row.getString("Time Ended (HH:MM:SS)")),
       row.getString("With Dog (True/False)").equals("True"),
       row.getDouble("Distance (km)"),
       row.getInt("Average Heart Rate (BPM)"),
@@ -31,4 +31,9 @@ void draw() {
   for (var walk : walks) {
     walk.draw(offset);
   }
+}
+
+int parseHrMinSecTime(String time) {
+  var parts = time.split(":");
+  return int(parts[0]) * 3600 + int(parts[1]) * 60 + int(parts[2]);
 }
