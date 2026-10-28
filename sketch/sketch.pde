@@ -20,10 +20,6 @@ void setup() {
   }
 }
 
-void mouseWheel(MouseEvent e) {
-  offset += e.getCount() * 0.75;
-}
-
 void draw() {
   background(#0d0d0d);
   noStroke();
@@ -31,6 +27,10 @@ void draw() {
   for (var walk : walks) {
     walk.draw(offset);
   }
+}
+
+void mouseWheel(MouseEvent e) {
+  offset += e.getCount() * 0.75;
 }
 
 int parseHrMinSecTime(String time) {
