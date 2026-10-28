@@ -3,7 +3,8 @@ int offset;
 
 void setup() {
   surface.setTitle("Dear Data 100");
-  size(804, 408);
+  size(804, 804);
+  frameRate(120);
 
   for (var row : loadTable("walks.csv", "header").rows()) {
     walks.add(new Walk (
