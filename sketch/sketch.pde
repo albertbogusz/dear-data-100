@@ -1,4 +1,5 @@
 ArrayList<Walk> walks = new ArrayList<Walk>();
+int offset;
 
 void setup() {
   surface.setTitle("Dear Data 100");
@@ -18,6 +19,15 @@ void setup() {
   }
 }
 
+void mouseWheel(MouseEvent e) {
+  offset += e.getCount() * 0.75;
+}
+
 void draw() {
-  background(0);
+  background(#0d0d0d);
+  noStroke();
+
+  for (var walk : walks) {
+    walk.draw(offset);
+  }
 }
