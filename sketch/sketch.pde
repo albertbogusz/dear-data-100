@@ -29,7 +29,7 @@ void draw() {
   if (frameCount % (FRAME_RATE * 1.5) == 0) {
     var randomWalk = walks.get((int)random(walks.size()));
     offset = (int)random(randomWalk.duration);
-    text.update(str(randomWalk.duration), randomWalk.effort * 10);
+    text.update(formatTime(randomWalk.duration), randomWalk.effort * 10);
   }
 
   for (var walk : walks) {
@@ -46,4 +46,8 @@ void mouseWheel(MouseEvent e) {
 int parseHrMinSecTime(String time) {
   var parts = time.split(":");
   return int(parts[0]) * 3600 + int(parts[1]) * 60 + int(parts[2]);
+}
+
+String formatTime(int time) {
+  return "%02d:%02d:%02d".formatted(time / 3600, (time % 3600) / 60, time % 60);
 }
