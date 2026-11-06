@@ -35,7 +35,7 @@ void draw() {
 }
 
 void mouseWheel(MouseEvent e) {
-  offset += e.getCount() * (e.isAltDown() ? 16 : 2);
+  offset = max(15, offset + e.getCount() * (e.isAltDown() ? 16 : 2));
 }
 
 int parseHrMinSecTime(String time) {
