@@ -22,8 +22,8 @@ class Walk {
   }
 
   void draw(int offset) {
-    var isBlinking = withDog && millis() / 100 % 2 == 0;
-    fill(isBlinking ? #9db1e8 : #4f76e2);
+    var isBlinking = withDog && isBlinkOn();
+    fillBlinkColour(isBlinking);
     circle(
       map((float)activeKcal * frameCount, 0, width, 0, (float)distance * 100 + offset) / 100 % width,
       (map((float)avgBpm, 0, height, 0, (float)duration * frameCount) / 100 + random(effort * 0.1) + offset) % height,

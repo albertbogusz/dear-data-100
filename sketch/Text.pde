@@ -7,7 +7,7 @@ class Text {
       return;
     }
 
-    fill(millis() / 100 % 2 == 0 ? #9db1e8 : #4f76e2);
+    fillBlinkColour(isBlinkOn());
     textAlign(CENTER, CENTER);
     textSize(size);
     text(label, width / 2, height / 2);

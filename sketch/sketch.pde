@@ -43,6 +43,14 @@ void mouseWheel(MouseEvent e) {
   offset = max(15, offset + e.getCount() * (e.isAltDown() ? 16 : 2));
 }
 
+boolean isBlinkOn() {
+  return millis() / 100 % 2 == 0;
+}
+
+void fillBlinkColour(boolean isBlinkOn) {
+  fill(isBlinkOn ? #9db1e8 : #4f76e2);
+}
+
 int parseHrMinSecTime(String time) {
   var parts = time.split(":");
   return int(parts[0]) * 3600 + int(parts[1]) * 60 + int(parts[2]);
