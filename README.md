@@ -14,13 +14,13 @@ My topic is observations from various walks that I do, each one logged with the 
 
 ## Structure
 
-- [`sketch/`](sketch/) : The Processing sketch folder
-  - [`sketch.pde`](sketch/sketch.pde) : The sketch's entry point
-  - [`data/`](sketch/data/) : The data
+- [`Sketch/`](Sketch/) : The Processing sketch folder
+  - [`Sketch.pde`](Sketch/Sketch.pde) : The sketch's entry point
+  - [`data/`](Sketch/data/) : The data
 
 ## Running
 
-Open Processing ([download here](https://processing.org/download)) and add the [`sketch/`](sketch/) folder (rename if needed) to your sketchbook. Then open the sketch and run it.
+Open Processing ([download here](https://processing.org/download)) and add the [`Sketch/`](Sketch/) folder (rename if needed) to your sketchbook. Then open the sketch and run it.
 
 Or using the CLI:
 
