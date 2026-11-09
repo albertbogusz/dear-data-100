@@ -37,4 +37,4 @@ processing cli --sketch=path/to/sketch/folder --run
 
 ## License
 
-This repository is licensed under the [MIT License](LICENSE).
+Released under the [MIT License](LICENSE).
